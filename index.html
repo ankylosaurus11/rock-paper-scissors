@@ -9,10 +9,13 @@
 <script>
     function getComputerChoice() {
         let cpuNum = Math.floor(Math.random()*3+1)
+
         if ( cpuNum === 1 ) {
             return "Scissors";
+
         } else if ( cpuNum === 2 ) {
             return "Rock";
+
         } else {
             return "Paper";
         }
@@ -21,12 +24,16 @@
 
     function getPlayerChoice() {
         let playerSelection = prompt("Select Rock, Paper, or Scissors!", "")
+        
         if (playerSelection == "Rock") {
             return "Rock";
+
         } else if (playerSelection == "Paper") {
             return "Paper";
+
         } else if (playerSelection == "Scissors") {
             return "Scissors";
+
         } else {
             return "Not a Valid Option, Please Try Again";
         }
@@ -36,18 +43,22 @@
     function playRound(computerChoice, playerChoice) {
         if ( computerChoice === "Scissors" && playerChoice === "Rock" ) {
             return "You Win!";
+
         } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
             return "You Win!";
+
         } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
             return "You Win!";
+
         } else if ( computerChoice === playerChoice) {
             return "A Draw"
+            
         } else {
             return "You lose!"
         }
     }
 
-    const playerChoice = getPlayerChoice();
+    const playerChoice = "rock";
     const computerChoice = getComputerChoice();
     console.log(playRound(playerChoice, computerChoice));
 
