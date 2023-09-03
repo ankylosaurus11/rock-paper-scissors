@@ -7,17 +7,19 @@
 </head>
 <body>
 <script>
-    
     function getComputerChoice() {
-        let cpuNum = Math.random(1-3)
-        if ( cpuNum === 1 ) 
-            return "Scissor"
-        else if ( cpuNum === 2 )
-            return "Rock"
-        else
-            return "Paper"
+        let cpuNum = Math.floor(Math.random()*3+1)
+        if ( cpuNum === 1 ) {
+            return "Scissor";
+        } else if ( cpuNum === 2 ) {
+            return "Rock";
+        } else {
+            return "Paper";
+        }
     }
     console.log(getComputerChoice())
+
+
 </script>
 </body>
 </html>
