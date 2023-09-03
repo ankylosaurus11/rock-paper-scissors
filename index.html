@@ -33,19 +33,24 @@
     }
     console.log(getPlayerChoice())
 
-    function playRound(getPlayerChoice, getComputerChoice) {
-        if ( getComputerChoice("Scissor") && getPlayerChoice("Rock") ) {//||
+    function playRound(computerChoice, playerChoice) {
+        if ( computerChoice === "Scissors" && playerChoice === "Rock" ) {//||
         //getComputerChoice("Paper") && getPlayerChoice("Scissors")) ||
         //getComputerChoice("Rock") && getPlayerChoice("Paper") {
-            console.log( "You win!" );
-        } else if ( getComputerChoice == getPlayerChoice) {
-            console.log( "A draw" );
+            return "You Win!"
+            //console.log( "You win!" );
+        } else if ( computerChoice === playerChoice) {
+            return "A Draw"
+            //console.log( "A draw" );
         } else {
-            console.log( "You lose!" );
+            return "You lose!"
+            //console.log( "You lose!" );
         }
     }
 
-    
+    const playerChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    console.log(playRound(playerChoice, computerChoice));
 
 </script>
 </body>
