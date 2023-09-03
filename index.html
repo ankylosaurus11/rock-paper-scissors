@@ -10,7 +10,7 @@
     function getComputerChoice() {
         let cpuNum = Math.floor(Math.random()*3+1)
         if ( cpuNum === 1 ) {
-            return "Scissor";
+            return "Scissors";
         } else if ( cpuNum === 2 ) {
             return "Rock";
         } else {
@@ -22,16 +22,30 @@
     function getPlayerChoice() {
         let playerSelection = prompt("Select Rock, Paper, or Scissors!", "")
         if (playerSelection == "Rock") {
-            return "Rock"
+            return "Rock";
         } else if (playerSelection == "Paper") {
-            return "Paper"
+            return "Paper";
         } else if (playerSelection == "Scissors") {
-            return "Scissors"
+            return "Scissors";
         } else {
-            return "Not a Valid Option, Please Try Again"
+            return "Not a Valid Option, Please Try Again";
         }
     }
     console.log(getPlayerChoice())
+
+    function playRound(getPlayerChoice, getComputerChoice) {
+        if ( getComputerChoice("Scissor") && getPlayerChoice("Rock") ) {//||
+        //getComputerChoice("Paper") && getPlayerChoice("Scissors")) ||
+        //getComputerChoice("Rock") && getPlayerChoice("Paper") {
+            console.log( "You win!" );
+        } else if ( getComputerChoice == getPlayerChoice) {
+            console.log( "A draw" );
+        } else {
+            console.log( "You lose!" );
+        }
+    }
+
+    
 
 </script>
 </body>
