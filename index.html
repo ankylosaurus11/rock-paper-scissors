@@ -7,6 +7,7 @@
 </head>
 <body>
 <script>
+    
     function getComputerChoice() {
         let cpuNum = Math.floor(Math.random()*3+1)
 
@@ -22,45 +23,55 @@
     }
     console.log(getComputerChoice())
 
-    function getPlayerChoice() {
-        let playerSelection = prompt("Select Rock, Paper, or Scissors!", "")
+    let playerMsg = "Choose Rock, Paper, or Scissors"
+    function getPlayerChoice(playerMsg) {
+        if (playerMsg === "Rock" || "Paper" || "Scissors") {
+        return prompt(playerMsg);
         
-        if (playerSelection == "Rock") {
-            return "Rock";
-
-        } else if (playerSelection == "Paper") {
-            return "Paper";
-
-        } else if (playerSelection == "Scissors") {
-            return "Scissors";
-
         } else {
             return "Not a Valid Option, Please Try Again";
         }
+//        let playerSelection = prompt("Select Rock, Paper, or Scissors!", "")
+//        
+//
+//        if (getPlayerChoice == "Rock") {
+//            return "Rock";
+//
+//        } else if (getPlayerChoice == "Paper") {
+//            return "Paper";
+//
+//        } else if (getPlayerChoice == "Scissors") {
+//            return "Scissors";
+//
+//        } else {
+//            return "Not a Valid Option, Please Try Again";
+//        }
     }
     console.log(getPlayerChoice())
 
-    function playRound(computerChoice, playerChoice) {
-        if ( computerChoice === "Scissors" && playerChoice === "Rock" ) {
-            return "You Win!";
-
-        } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
-            return "You Win!";
-
-        } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
-            return "You Win!";
-
-        } else if ( computerChoice === playerChoice) {
-            return "A Draw"
-            
-        } else {
-            return "You lose!"
-        }
-    }
-
-    const playerChoice = "rock";
-    const computerChoice = getComputerChoice();
-    console.log(playRound(playerChoice, computerChoice));
+//  function playRound(computerChoice, playerChoice) {
+//      if ( computerChoice === "Scissors" && playerChoice === "Rock" ) {
+//          return "You Win!";
+//      } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
+//          return "You Win!";
+//      } else if ( computerChoice === "Paper" && playerChoice === "Scissors" ) {
+//          return "You Win!";
+//      } else if ( computerChoice === playerChoice) {
+//          return "A Draw";
+//      } else if ( playerChoice === "Not a Valid Option, Please Try Again") {
+//          return "Not a Valid Option, Please Try Again";
+//          
+//      } else {
+//          return "You lose!"
+//      }
+//    }
+//    function playRound(playerChoice, computerChoice) {
+//
+//    }
+//
+//    const playerChoice = getPlayerChoice(prompt("Select Rock, Paper, or Scissors!", ""))
+//    const computerChoice = getComputerChoice();
+//    console.log(playRound(playerChoice, computerChoice));
 
 </script>
 </body>
