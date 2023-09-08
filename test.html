@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+function game() {
+
+let i = 1;
+playerWins = 0;
+cpuWins = 0;
+
+while ( i < 5 ) {
+
+        function getComputerChoice() {
+        let cpuNum = Math.floor(Math.random()*3+1)
+
+        if ( cpuNum === 1 ) {
+        return "Scissors";
+
+        } else if ( cpuNum === 2 ) {
+        return "Rock";
+
+        } else {
+        return "Paper";
+        }
+}
+
+        let playerOption = prompt("Select Rock, Paper, or Scissors!")?.toLowerCase();
+
+function playerChoice() {
+        if (playerOption == "rock") {
+            return "Rock";
+
+        } else if (playerOption == "paper") {
+            return "Paper";
+
+        } else if (playerOption == "scissors") {
+            return "Scissors";
+
+        } else {
+            return "Not a Valid Option, Please Try Again";
+        }
+}
+
+        const playerSelection = playerChoice();
+        const computerSelection = getComputerChoice();
+        playRound(computerSelection, playerSelection)
+}
+
+function playRound(computerSelection, playerSelection) {
+
+i++;
+console.log(i);
+console.log(playerSelection);
+console.log(computerSelection);
+
+if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
+playerWins++;
+
+} else if ( computerSelection === "Paper" && playerSelection === "Scissors" ) {
+playerWins++;
+
+} else if ( computerSelection === "Rock" && playerSelection === "Paper" ) {
+playerWins++;
+
+} else if ( computerSelection === "Scissors" && playerSelection === "Paper" ) {
+cpuWins++;
+
+} else if ( computerSelection === "Paper" && playerSelection === "Rock" ) {
+cpuWins++;
+
+} else if ( computerSelection === "Rock" && playerSelection === "Scissors" ) {
+cpuWins++;
+
+} else if ( computerSelection === playerSelection) {
+        return "A Draw!";
+       
+} else {
+        return "Not a Valid Option, Please Try Again";
+        }
+
+}
+
+if (playerWins > cpuWins) {
+        console.log("you win");
+}
+
+else {
+        console.log("you lose");
+}
+
+}
+
+game();
+console.log(playerWins);
+console.log(cpuWins);
+
+</script>
+    
+</body>
+</html>
