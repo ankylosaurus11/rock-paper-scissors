@@ -32,12 +32,6 @@ function playRound(computerSelection, playerSelection) {
 console.log(playerSelection);
 console.log(computerSelection);
 
-
-const playerWins = document.querySelector('#playerWins');
-const cpuWins = document.querySelector('#cpuWins');
-
-
-
 if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
         playerWins.textContent++;
 
@@ -57,18 +51,29 @@ if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
         cpuWins.textContent++;
 
 } else if ( computerSelection === playerSelection) {
-        console.log("A Draw!");
+        alert("A Draw! Select a new option.");
        
 } else {
-        console.log("Not a Valid Option, Please Try Again");
+        alert("Not a Valid Option, Please Try Again");
         }
 
+if (playerWins.textContent === '3') {
+        playerWins.textContent = 0;
+        cpuWins.textContent = 0;
+        alert("You win!");
+        return;
+}else if (cpuWins.textContent === '3') {
+        playerWins.textContent = 0;
+        cpuWins.textContent = 0;
+        alert("You lose!");
+        return;
+}
 }
 
-
+const playerWins = document.querySelector('#playerWins');
+const cpuWins = document.querySelector('#cpuWins');
 
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach((button) => {
         button.addEventListener('click', () => {
                 playRound(getComputerChoice(), button.id)
