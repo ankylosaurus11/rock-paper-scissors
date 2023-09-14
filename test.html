@@ -60,41 +60,31 @@ console.log(playerSelection);
 console.log(computerSelection);
 
 if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
-        playerWins++;
+        console.log("You win");
 
 } else if ( computerSelection === "Paper" && playerSelection === "Scissors" ) {
-        playerWins++;
+        console.log("You win");
 
 } else if ( computerSelection === "Rock" && playerSelection === "Paper" ) {
-        playerWins++;
+        console.log("You win");
 
 } else if ( computerSelection === "Scissors" && playerSelection === "Paper" ) {
-        cpuWins++;
+        console.log("You lose");
 
 } else if ( computerSelection === "Paper" && playerSelection === "Rock" ) {
-        cpuWins++;
+        console.log("You lose");
 
 } else if ( computerSelection === "Rock" && playerSelection === "Scissors" ) {
-        cpuWins++;
+        console.log("You lose");
 
 } else if ( computerSelection === playerSelection) {
-        return "A Draw!";
+        console.log("A Draw!");
        
 } else {
-        return "Not a Valid Option, Please Try Again";
+        console.log("Not a Valid Option, Please Try Again");
         }
 
 }
-
-if (playerWins > cpuWins) {
-        console.log("you win");
-} else {
-        console.log("you lose");
-}
-
-
-console.log(playerWins);
-console.log(cpuWins);
 
 
 const buttons = document.querySelectorAll('button');
@@ -104,18 +94,6 @@ buttons.forEach((button) => {
                 playRound(getComputerChoice(), button.id)
         });
 });
-
-
-
-
-//const rock = document.querySelector('.rock');
-//rock.onclick = () => playRound(computerSelection, playerSelection);
-//
-//const paper = document.querySelector('.paper');
-//paper.onclick = () => alert("paper");
-//
-//const scissors = document.querySelector('.scissors');
-//scissors.onclick = () => alert("scissors");
 
 </script>
     
