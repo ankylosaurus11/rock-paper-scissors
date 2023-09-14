@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+    <button id="Rock">Rock</button>
+    <button id="Paper">Paper</button>
+    <button id="Scissors">Scissors</button>
 <script>
 
 let i = 0;
@@ -32,20 +32,22 @@ function getComputerChoice() {
 }
 
 
-function playerChoice() {
-    if (playerOption == "rock") {
-        return "Rock";
-
-    } else if (playerOption == "paper") {
-        return "Paper";
-
-    } else if (playerOption == "scissors") {
-        return "Scissors";
-
-    } else {
-        return "Not a Valid Option, Please Try Again";
-        }
-}
+//function playerChoice(shoot) {
+//
+//        console.log(shoot)
+//    if (shoot === "rock") {
+//        return "Rock";
+//
+//    } else if (shoot === "paper") {
+//        return "Paper";
+//
+//    } else if (shoot === "scissors") {
+//        return "Scissors";
+//
+//    } else {
+//        return "Not a Valid Option, Please Try Again";
+//        }
+//}
 
 //const playerSelection = playerChoice();
 //const computerSelection = getComputerChoice();
@@ -94,14 +96,26 @@ if (playerWins > cpuWins) {
 console.log(playerWins);
 console.log(cpuWins);
 
-const rock = document.querySelector('.rock');
-rock.onclick = () => alert("rock");
 
-const paper = document.querySelector('.paper');
-paper.onclick = () => alert("paper");
+const buttons = document.querySelectorAll('button');
 
-const scissors = document.querySelector('.scissors');
-scissors.onclick = () => alert("scissors");
+buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+                playRound(getComputerChoice(), button.id)
+        });
+});
+
+
+
+
+//const rock = document.querySelector('.rock');
+//rock.onclick = () => playRound(computerSelection, playerSelection);
+//
+//const paper = document.querySelector('.paper');
+//paper.onclick = () => alert("paper");
+//
+//const scissors = document.querySelector('.scissors');
+//scissors.onclick = () => alert("scissors");
 
 </script>
     
