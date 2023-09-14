@@ -9,13 +9,9 @@
     <button id="Rock">Rock</button>
     <button id="Paper">Paper</button>
     <button id="Scissors">Scissors</button>
+    <div id="playerWins">0</div>
+    <div id="cpuWins">0</div>
 <script>
-
-let i = 0;
-playerWins = 0;
-cpuWins = 0;
-
-
 
 function getComputerChoice() {
     let cpuNum = Math.floor(Math.random()*3+1)
@@ -31,51 +27,34 @@ function getComputerChoice() {
         }
 }
 
-
-//function playerChoice(shoot) {
-//
-//        console.log(shoot)
-//    if (shoot === "rock") {
-//        return "Rock";
-//
-//    } else if (shoot === "paper") {
-//        return "Paper";
-//
-//    } else if (shoot === "scissors") {
-//        return "Scissors";
-//
-//    } else {
-//        return "Not a Valid Option, Please Try Again";
-//        }
-//}
-
-//const playerSelection = playerChoice();
-//const computerSelection = getComputerChoice();
-//playRound(computerSelection, playerSelection)
-//
-//
 function playRound(computerSelection, playerSelection) {
 
 console.log(playerSelection);
 console.log(computerSelection);
 
+
+const playerWins = document.querySelector('#playerWins');
+const cpuWins = document.querySelector('#cpuWins');
+
+
+
 if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
-        console.log("You win");
+        playerWins.textContent++;
 
 } else if ( computerSelection === "Paper" && playerSelection === "Scissors" ) {
-        console.log("You win");
+        playerWins.textContent++;
 
 } else if ( computerSelection === "Rock" && playerSelection === "Paper" ) {
-        console.log("You win");
+        playerWins.textContent++;
 
 } else if ( computerSelection === "Scissors" && playerSelection === "Paper" ) {
-        console.log("You lose");
+        cpuWins.textContent++;
 
 } else if ( computerSelection === "Paper" && playerSelection === "Rock" ) {
-        console.log("You lose");
+        cpuWins.textContent++;
 
 } else if ( computerSelection === "Rock" && playerSelection === "Scissors" ) {
-        console.log("You lose");
+        cpuWins.textContent++;
 
 } else if ( computerSelection === playerSelection) {
         console.log("A Draw!");
@@ -85,6 +64,7 @@ if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
         }
 
 }
+
 
 
 const buttons = document.querySelectorAll('button');
