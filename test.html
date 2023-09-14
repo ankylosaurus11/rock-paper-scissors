@@ -8,24 +8,22 @@
 <body>
 <script>
 
-function game() {
-
-let i = 1;
+let i = 0;
 playerWins = 0;
 cpuWins = 0;
 
-while ( i < 5 ) {
 
-        function getComputerChoice() {
-        let cpuNum = Math.floor(Math.random()*3+1)
 
-        if ( cpuNum === 1 ) {
+function getComputerChoice() {
+    let cpuNum = Math.floor(Math.random()*3+1)
+
+    if ( cpuNum === 1 ) {
         return "Scissors";
 
-        } else if ( cpuNum === 2 ) {
+    } else if ( cpuNum === 2 ) {
         return "Rock";
 
-        } else {
+    } else {
         return "Paper";
         }
 }
@@ -33,49 +31,47 @@ while ( i < 5 ) {
         let playerOption = prompt("Select Rock, Paper, or Scissors!")?.toLowerCase();
 
 function playerChoice() {
-        if (playerOption == "rock") {
-            return "Rock";
+    if (playerOption == "rock") {
+        return "Rock";
 
-        } else if (playerOption == "paper") {
-            return "Paper";
+    } else if (playerOption == "paper") {
+        return "Paper";
 
-        } else if (playerOption == "scissors") {
-            return "Scissors";
+    } else if (playerOption == "scissors") {
+        return "Scissors";
 
-        } else {
-            return "Not a Valid Option, Please Try Again";
+    } else {
+        return "Not a Valid Option, Please Try Again";
         }
 }
 
-        const playerSelection = playerChoice();
-        const computerSelection = getComputerChoice();
-        playRound(computerSelection, playerSelection)
-}
+const playerSelection = playerChoice();
+const computerSelection = getComputerChoice();
+playRound(computerSelection, playerSelection)
+
 
 function playRound(computerSelection, playerSelection) {
 
-i++;
-console.log(i);
 console.log(playerSelection);
 console.log(computerSelection);
 
 if ( computerSelection === "Scissors" && playerSelection === "Rock" ) {
-playerWins++;
+        playerWins++;
 
 } else if ( computerSelection === "Paper" && playerSelection === "Scissors" ) {
-playerWins++;
+        playerWins++;
 
 } else if ( computerSelection === "Rock" && playerSelection === "Paper" ) {
-playerWins++;
+        playerWins++;
 
 } else if ( computerSelection === "Scissors" && playerSelection === "Paper" ) {
-cpuWins++;
+        cpuWins++;
 
 } else if ( computerSelection === "Paper" && playerSelection === "Rock" ) {
-cpuWins++;
+        cpuWins++;
 
 } else if ( computerSelection === "Rock" && playerSelection === "Scissors" ) {
-cpuWins++;
+        cpuWins++;
 
 } else if ( computerSelection === playerSelection) {
         return "A Draw!";
@@ -88,15 +84,11 @@ cpuWins++;
 
 if (playerWins > cpuWins) {
         console.log("you win");
-}
-
-else {
+} else {
         console.log("you lose");
 }
 
-}
 
-game();
 console.log(playerWins);
 console.log(cpuWins);
 
