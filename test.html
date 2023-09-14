@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
 <script>
 
 let i = 0;
@@ -28,7 +31,6 @@ function getComputerChoice() {
         }
 }
 
-        let playerOption = prompt("Select Rock, Paper, or Scissors!")?.toLowerCase();
 
 function playerChoice() {
     if (playerOption == "rock") {
@@ -45,11 +47,11 @@ function playerChoice() {
         }
 }
 
-const playerSelection = playerChoice();
-const computerSelection = getComputerChoice();
-playRound(computerSelection, playerSelection)
-
-
+//const playerSelection = playerChoice();
+//const computerSelection = getComputerChoice();
+//playRound(computerSelection, playerSelection)
+//
+//
 function playRound(computerSelection, playerSelection) {
 
 console.log(playerSelection);
@@ -91,6 +93,15 @@ if (playerWins > cpuWins) {
 
 console.log(playerWins);
 console.log(cpuWins);
+
+const rock = document.querySelector('.rock');
+rock.onclick = () => alert("rock");
+
+const paper = document.querySelector('.paper');
+paper.onclick = () => alert("paper");
+
+const scissors = document.querySelector('.scissors');
+scissors.onclick = () => alert("scissors");
 
 </script>
     
